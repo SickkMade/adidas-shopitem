@@ -1,0 +1,46 @@
+.shopitem{
+    width: var(--shopitem-width);
+    height: var(--shopitem-height);
+    border:1px transparent solid;
+
+    position: relative;
+}
+
+.shopitem:hover{
+    border:1px black solid;
+}
+
+.shopitem--image{
+    width: var(--shopitem-width);
+    background-color:rgba(128, 128, 128, 0.25);
+}
+
+.shopitem--price{
+    position:absolute;
+    z-index: 1;
+    
+    background-color: white;
+    padding:2.5%;
+    top:60%;
+    left:1%;
+    width:fit-content;
+
+    transition: all 0.05s ease-in-out;
+}
+.shopitem:hover .shopitem--price{
+    top:54%;
+}
+
+.shopitem--galary{
+    width:100%;
+    height: 15%;
+    background-color:black;
+
+    visibility:hidden;
+    position:absolute;
+}
+
+.shopitem:hover .shopitem--galary{
+    visibility: visible;
+    position: relative;
+}
