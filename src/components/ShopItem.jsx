@@ -1,4 +1,5 @@
 import '../css/ShopItem.css'
+import Gallary from './Gallary'
 
 function ShopItem() {
 
@@ -6,7 +7,7 @@ function ShopItem() {
     <div className="shopitem">
         <img className="shopitem--image" src="vite.svg" />
         <p className="shopitem--price">$999</p>
-        <div className="shopitem--galary"></div>
+        <Gallary imageCount={5}/>
         <div className="shopitem--description">
             <p className="shopitem--description__name">Vite Logo</p>
             <p className="shopitem--description__category">Logos</p>

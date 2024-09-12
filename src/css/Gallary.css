@@ -1,0 +1,16 @@
+.galary{
+    width:100%;
+    height: 15%;
+    background-color:black;
+
+    visibility:hidden;
+    position:absolute;
+
+    overflow:hidden;
+}
+
+/* USED IN CONTEXT OF ADIDAS COMPONENT DELETE IF OTHERWISE */
+.shopitem:hover .galary{
+    visibility: visible;
+    position: relative;
+}
