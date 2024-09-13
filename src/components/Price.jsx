@@ -3,14 +3,14 @@ import '../css/Price.css'
 function Price({price, discount}) {
 
     const getReducedPrice = () => {
-        return price * (discount/100)
+        return Math.floor(price * (discount/100))
     }
   return (
     <>
-        <div className="price__discount-percent">-{discount}%</div>
+        <div className={discount > 0 ? "price__discount-percent" : "price__invisible"}>-{discount}%</div>
         <div className="price">
             <p className={discount > 0 ? 'price__crossed-out' : ''}>${price}</p>
-            <p className="price__discounted">${getReducedPrice()}</p>
+            {discount>0 && <p className="price__discounted">${getReducedPrice()}</p>}
         </div>
     </>
   )

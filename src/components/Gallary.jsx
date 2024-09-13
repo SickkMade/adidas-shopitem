@@ -24,7 +24,7 @@ function Gallary({ imageCount, setPrice, setTag, setDiscount }) {
         },
         {
             img:'vite.svg',
-            priceCut:0,
+            priceCut:99,
             tag:'This is a tag!',
             price:5,
         },

@@ -1,10 +1,11 @@
 .price{
-    width:fit-content;
     background-color: white;
     padding:2.5%;
-    white-space: nowrap;
 
     position:absolute;
+
+    display:flex;
+    flex-flow: nowrap;
 }
 
 .price__discounted{
@@ -18,4 +19,9 @@
 
 .price__discount-percent{
     font-weight: bold;
+    background-color:white;
+}
+
+.price__invisible{
+    visibility: hidden;
 }
