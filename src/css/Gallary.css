@@ -32,12 +32,21 @@
     height:calc(var(--shopitem-width)/10);
 
     z-index: 1;
+    transition: background-color .5s ease;
+}
+.gallary-button:hover{
+    cursor:pointer;
+    background-color:black;
+}
+.gallary-button:hover > svg{
+    filter: invert(500%);
 }
 .gallary-next{
     right:5%;
 }
 .gallary-prev{
     left:5%;
+    transform:rotate(180deg) translateY(50%);
 }
 
 .gallary-svg{

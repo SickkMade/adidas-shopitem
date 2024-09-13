@@ -1,0 +1,21 @@
+.price{
+    width:fit-content;
+    background-color: white;
+    padding:2.5%;
+    white-space: nowrap;
+
+    position:absolute;
+}
+
+.price__discounted{
+    color:red;
+}
+
+.price__crossed-out{
+    text-decoration: line-through;
+    color:gray;
+}
+
+.price__discount-percent{
+    font-weight: bold;
+}

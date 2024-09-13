@@ -8,6 +8,7 @@
 
 .shopitem:hover{
     border:1px black solid;
+    cursor:pointer;
 }
 
 .shopitem--image{
@@ -19,11 +20,8 @@
     position:absolute;
     z-index: 1;
     
-    background-color: white;
-    padding:2.5%;
     top:60%;
     left:1%;
-    width:fit-content;
 
     transition: all 0.05s ease-in-out;
 }
