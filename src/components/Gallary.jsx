@@ -63,11 +63,15 @@ function Gallary({ imageCount }) {
         return () => window.removeEventListener('resize', updateChildWidth);
     }, [imageCount])
     
+    const shouldShowNextButton = () => {
+        if(innerGallaryRef.current){
+            return innerGallarySlide-galaryRef.current.offsetWidth < innerGallaryRef.current.offsetWidth
+        }
+    }
     
   return (
     <div className="galary" ref={galaryRef}>
-        {/* god let me decouple this in the future :pray emoji: */}
-        { innerGallaryRef.current ? innerGallarySlide-galaryRef.current.offsetWidth < innerGallaryRef.current.offsetWidth ? <button onClick={() => slideInnerGallary()}className="gallary-next">{forward}</button> : <></> : ''}
+        {shouldShowNextButton() && <button onClick={() => slideInnerGallary()}className="gallary-next">{forward}</button>}
         <div className="inner-gallary" ref={innerGallaryRef} style={{ transform: `translate(${-innerGallarySlide}px)`, transition: 'transform .5s ease' }}>
             {gallaryItems.map((obj, i) => {
                 return <img className="galary-item" key={i} src={obj.img} width={childWidth+'px'} />
