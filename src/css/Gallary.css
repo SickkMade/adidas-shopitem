@@ -12,6 +12,7 @@
 .inner-gallary{
     width:100%;
     height:100%;
+    white-space: nowrap;
 }
 
 .galary-item{
@@ -29,15 +30,14 @@
     border: 1px black solid;
     background-color: white;
 
-    width:10%;
-    height:50%;
+    width:calc(var(--shopitem-width)/10);
+    height:calc(var(--shopitem-width)/10);
 
-    text-align: center;
-}
+    display:flex;
+    justify-content: center;
+    align-items: center;
 
-.gallary-next > svg{
-    display: block;
-    margin: auto;
+    z-index: 1;
 }
 
 

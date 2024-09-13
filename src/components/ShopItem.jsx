@@ -7,7 +7,7 @@ function ShopItem() {
     <div className="shopitem">
         <img className="shopitem--image" src="vite.svg" />
         <p className="shopitem--price">$999</p>
-        <Gallary imageCount={6}/>
+        <Gallary imageCount={3}/>
         <div className="shopitem--description">
             <p className="shopitem--description__name">Vite Logo</p>
             <p className="shopitem--description__category">Logos</p>

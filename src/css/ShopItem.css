@@ -27,6 +27,7 @@
 
     transition: all 0.05s ease-in-out;
 }
+
 .shopitem:hover .shopitem--price{
     top:54%;
 }
