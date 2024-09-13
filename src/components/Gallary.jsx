@@ -67,7 +67,7 @@ function Gallary({ imageCount }) {
     
     const shouldShowNextButton = () => {
         if(innerGallaryRef.current){
-            return innerGallarySlide-galaryRef.current.offsetWidth < innerGallaryRef.current.offsetWidth
+            return innerGallarySlide+galaryRef.current.offsetWidth < (galaryRef.current.offsetWidth/imageCount)*gallaryItems.length
         }
     }
     const shouldShowPrevButton = () => {
