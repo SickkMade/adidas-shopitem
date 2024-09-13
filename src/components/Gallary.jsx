@@ -8,6 +8,7 @@ function Gallary({ imageCount }) {
     const [innerGallarySlide, setInnerGallarySlide] = useState(0)
 
     const forward = <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="48px" fill="#5f6368"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+    const prev = <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
 
     const gallaryItems = [
         {
@@ -47,8 +48,9 @@ function Gallary({ imageCount }) {
         },
     ]
 
-    const slideInnerGallary = () => {
-        setInnerGallarySlide(innerGallarySlide + galaryRef.current.offsetWidth)
+    //positive direction is right, negative is left
+    const slideInnerGallary = (dir) => {
+        setInnerGallarySlide(innerGallarySlide + dir * galaryRef.current.offsetWidth)
     }
 
     //runs on mount
@@ -68,10 +70,16 @@ function Gallary({ imageCount }) {
             return innerGallarySlide-galaryRef.current.offsetWidth < innerGallaryRef.current.offsetWidth
         }
     }
+    const shouldShowPrevButton = () => {
+        if(innerGallaryRef.current){
+            return innerGallarySlide != 0
+        }
+    }
     
   return (
     <div className="galary" ref={galaryRef}>
-        {shouldShowNextButton() && <button onClick={() => slideInnerGallary()}className="gallary-next">{forward}</button>}
+        {shouldShowNextButton() && <button onClick={() => slideInnerGallary(1)}className="gallary-button gallary-next gallary-svg">{forward}</button>}
+        {shouldShowPrevButton() && <button onClick={() => slideInnerGallary(-1)}className="gallary-button gallary-prev gallary-svg">{prev}</button>}
         <div className="inner-gallary" ref={innerGallaryRef} style={{ transform: `translate(${-innerGallarySlide}px)`, transition: 'transform .5s ease' }}>
             {gallaryItems.map((obj, i) => {
                 return <img className="galary-item" key={i} src={obj.img} width={childWidth+'px'} />

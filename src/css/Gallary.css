@@ -19,10 +19,8 @@
     height:100%;
     object-fit:fill;
 }
-
-.gallary-next{
+.gallary-button{
     position:absolute;
-    right:5%;
     top:50%;
     transform:translateY(-50%);
 
@@ -33,13 +31,20 @@
     width:calc(var(--shopitem-width)/10);
     height:calc(var(--shopitem-width)/10);
 
+    z-index: 1;
+}
+.gallary-next{
+    right:5%;
+}
+.gallary-prev{
+    left:5%;
+}
+
+.gallary-svg{
     display:flex;
     justify-content: center;
     align-items: center;
-
-    z-index: 1;
 }
-
 
 /* USED IN CONTEXT OF ADIDAS COMPONENT DELETE IF OTHERWISE */
 
