@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from 'react'
 
 function Gallary({ imageCount }) {
     const galaryRef = useRef(null)
+    const innerGallaryRef = useRef(null)
     const [childWidth, setChildWidth] = useState(0)
     const [innerGallarySlide, setInnerGallarySlide] = useState(0)
 
@@ -47,7 +48,7 @@ function Gallary({ imageCount }) {
     ]
 
     const slideInnerGallary = () => {
-        setInnerGallarySlide(innerGallarySlide - galaryRef.current.offsetWidth)
+        setInnerGallarySlide(innerGallarySlide + galaryRef.current.offsetWidth)
     }
 
     //runs on mount
@@ -65,8 +66,9 @@ function Gallary({ imageCount }) {
     
   return (
     <div className="galary" ref={galaryRef}>
-        {gallaryItems.length > imageCount ? <button onClick={() => slideInnerGallary()}className="gallary-next">{forward}</button> : <></>}
-        <div className="inner-gallary" style={{ transform: `translate(${innerGallarySlide}px)`, transition: 'transform .5s ease' }}>
+        {/* god let me decouple this in the future :pray emoji: */}
+        { innerGallaryRef.current ? innerGallarySlide-galaryRef.current.offsetWidth < innerGallaryRef.current.offsetWidth ? <button onClick={() => slideInnerGallary()}className="gallary-next">{forward}</button> : <></> : ''}
+        <div className="inner-gallary" ref={innerGallaryRef} style={{ transform: `translate(${-innerGallarySlide}px)`, transition: 'transform .5s ease' }}>
             {gallaryItems.map((obj, i) => {
                 return <img className="galary-item" key={i} src={obj.img} width={childWidth+'px'} />
             })}
