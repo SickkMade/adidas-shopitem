@@ -66,7 +66,7 @@ function Gallary({ imageCount }) {
   return (
     <div className="galary" ref={galaryRef}>
         {gallaryItems.length > imageCount ? <button onClick={() => slideInnerGallary()}className="gallary-next">{forward}</button> : <></>}
-        <div className="inner-gallary" style={{ transform: `translate(${innerGallarySlide}px)` }}>
+        <div className="inner-gallary" style={{ transform: `translate(${innerGallarySlide}px)`, transition: 'transform .5s ease' }}>
             {gallaryItems.map((obj, i) => {
                 return <img className="galary-item" key={i} src={obj.img} width={childWidth+'px'} />
             })}
