@@ -20,10 +20,15 @@
     position:absolute;
     z-index: 1;
     
-    top:60%;
+    top:55%;
     left:1%;
 
     transition: all 0.05s ease-in-out;
+}
+
+.shopitem--description > *{
+    margin:0;
+    font-size:.9rem;
 }
 
 .shopitem:hover .shopitem--price{

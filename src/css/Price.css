@@ -1,11 +1,14 @@
 .price{
     background-color: white;
-    padding:2.5%;
+    padding:15%;
 
     position:absolute;
 
     display:flex;
     flex-flow: nowrap;
+}
+.price > p {
+    margin:0;
 }
 
 .price__discounted{

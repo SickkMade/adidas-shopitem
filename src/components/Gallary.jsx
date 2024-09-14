@@ -31,18 +31,18 @@ function Gallary({ imageCount, setPrice, setTag, setDiscount }) {
         {
             img:'vite.svg',
             priceCut:0,
-            tag:0,
+            tag:'CHEEESE',
             price:999,
         },
         {
             img:'vite.svg',
-            priceCut:0,
+            priceCut:50,
             tag:0,
-            price:999,
+            price:0,
         },
         {
             img:'vite.svg',
-            priceCut:0,
+            priceCut:1,
             tag:0,
             price:999,
         },

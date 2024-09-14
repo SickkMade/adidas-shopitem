@@ -3,7 +3,7 @@ import '../css/Price.css'
 function Price({price, discount}) {
 
     const getReducedPrice = () => {
-        return Math.floor(price * (discount/100))
+        return Math.floor(price * (1- discount/100))
     }
   return (
     <>
