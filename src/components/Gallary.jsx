@@ -23,7 +23,7 @@ function Gallary({ imageCount, setPrice, setTag, setDiscount, setImage }) {
             price:999,
         },
         {
-            img:'vite.svg',
+            img:'2.webp',
             priceCut:99,
             tag:'This is a tag!',
             price:5,
@@ -41,13 +41,13 @@ function Gallary({ imageCount, setPrice, setTag, setDiscount, setImage }) {
             price:0,
         },
         {
-            img:'vite.svg',
+            img:'1.jpg',
             priceCut:1,
             tag:0,
             price:999,
         },
         {
-            img:'vite.svg',
+            img:'3.png',
             priceCut:0,
             tag:0,
             price:999,
@@ -67,14 +67,20 @@ function Gallary({ imageCount, setPrice, setTag, setDiscount, setImage }) {
         updateChildWidth()
         window.addEventListener('resize', updateChildWidth);
 
+        const setCurrent = i => {
+            setPrice(gallaryItems[i].price)
+            setTag(gallaryItems[i].tag)
+            setDiscount(gallaryItems[i].priceCut)
+            setImage(gallaryItems[i].img)
+        }
+
+        setCurrent(0)
+
         //probably can cache instead of doing this
         const children = innerGallaryRef.current.children
         for(let i = 0; i < children.length; i++){
             children[i].addEventListener('mouseover', () => {
-                setPrice(gallaryItems[i].price)
-                setTag(gallaryItems[i].tag)
-                setDiscount(gallaryItems[i].priceCut)
-                setImage(gallaryItems[i].img)
+                setCurrent(i)
             })
         }
 
