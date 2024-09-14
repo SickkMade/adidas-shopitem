@@ -1,7 +1,7 @@
 import '../css/Gallary.css'
 import { useRef, useEffect, useState } from 'react'
 
-function Gallary({ imageCount, setPrice, setTag, setDiscount }) {
+function Gallary({ imageCount, setPrice, setTag, setDiscount, setImage }) {
     const galaryRef = useRef(null)
     const innerGallaryRef = useRef(null)
     const [childWidth, setChildWidth] = useState(0)
@@ -74,6 +74,7 @@ function Gallary({ imageCount, setPrice, setTag, setDiscount }) {
                 setPrice(gallaryItems[i].price)
                 setTag(gallaryItems[i].tag)
                 setDiscount(gallaryItems[i].priceCut)
+                setImage(gallaryItems[i].img)
             })
         }
 

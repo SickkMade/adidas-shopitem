@@ -6,17 +6,18 @@ import { useState } from 'react'
 function ShopItem() {
     const [discount, setDiscount] = useState(0)
     const [tag, setTag] = useState('')
+    const [image, setImage] = useState('vite.svg')
     const [price, setPrice] = useState(0)
     
 
   return (
     <div className="shopitem">
-        <img className="shopitem--image" src="vite.svg" />
+        <img className="shopitem--image" src={image} />
         {/* <p className="shopitem--price">$999</p> */}
         <div className="shopitem--price">
             <Price discount={discount} price={price}/>
         </div>
-        <Gallary imageCount={3} setDiscount={setDiscount} setPrice={setPrice} setTag={setTag}/>
+        <Gallary imageCount={3} setDiscount={setDiscount} setPrice={setPrice} setTag={setTag} setImage={setImage}/>
         <div className="shopitem--description">
             <p className="shopitem--description__name">Vite Logo</p>
             <p className="shopitem--description__category">Logos</p>

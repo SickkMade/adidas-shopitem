@@ -13,7 +13,9 @@
 
 .shopitem--image{
     width: var(--shopitem-width);
-    background-color:rgba(128, 128, 128, 0.25);
+    height: var(--shopitem-width);
+    object-fit:contain;
+    background-color:var(--bg-color);
 }
 
 .shopitem--price{
